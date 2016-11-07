@@ -19,6 +19,7 @@ class PercolationStats(val n:Int, val trials:Int) {
     private def runSimulation(t:Int): Unit = {
         val percolate = new Percolation(n)
         var num_sites_open = 0
+
         while (!percolate.percolates()) {
             val row = StdRandom.uniform(1,n+1)
             val col = StdRandom.uniform(1,n+1)
@@ -31,7 +32,6 @@ class PercolationStats(val n:Int, val trials:Int) {
         _sites(t) = num_sites_open
     }
 }
-
 
 object Main{
     def main(args: Array[String]): Unit = {
