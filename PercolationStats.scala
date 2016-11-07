@@ -17,7 +17,6 @@ class PercolationStats(val n:Int, val trials:Int) {
     def confidenceHi(): Double = mean() + ((1.96 * stddev())) / Math.sqrt(trials-1)
 
     private def runSimulation(t:Int): Unit = {
-
         val percolate = new Percolation(n)
         var num_sites_open = 0
         while (!percolate.percolates()) {

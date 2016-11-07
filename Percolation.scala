@@ -31,7 +31,6 @@ class Percolation(val n:Int) {
 
     def percolates(): Boolean = _uf.connected(_top,_bottom)
 
-
     private def validate(row:Int, col:Int): Unit = {
         if (row < 1 || row > _dim || col < 1 || col > _dim)
             throw new ArrayIndexOutOfBoundsException(s"row ${row} and col ${col} must be between 1 and ${_dim}")
